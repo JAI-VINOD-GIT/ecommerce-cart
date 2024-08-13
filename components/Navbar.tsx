@@ -9,13 +9,16 @@ const Navbar = () => {
   return (
     <nav className="bg-base-100 shadow-md">
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold text-primary">
+        <Link
+          href="/"
+          className="text-2xl font-bold text-primary hover:text-black"
+        >
           Brand Logo
         </Link>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 ">
           <Link href="/cart" className="relative">
-            <FaShoppingCart className="text-2xl text-primary" />
+            <FaShoppingCart className="text-2xl text-primary hover:text-black" />
             {cart.length > 0 && (
               <span className="absolute -top-1 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                 {cart.length}
