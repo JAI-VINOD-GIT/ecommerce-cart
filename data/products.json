@@ -2,42 +2,42 @@
   {
     "id": 1,
     "name": "Product 1",
-    "image": "/images/product.png",
+    "image": "https://cdn.shopify.com/s/files/1/2303/2711/files/7_324422e0-fe83-4b3d-ae5c-641f4567b5ff.jpg?v=1617058709",
     "price": 300,
     "description": "Description for product 1"
   },
   {
     "id": 2,
     "name": "Product 2",
-    "image": "/images/product.png",
+    "image": "https://cdn.shopify.com/s/files/1/2303/2711/files/2_e822dae0-14df-4cb8-b145-ea4dc0966b34.jpg?v=1617059123",
     "price": 400,
     "description": "Description for product 2"
   },
   {
     "id": 3,
     "name": "Product 3",
-    "image": "/images/product.png",
+    "image": "https://cdn.shopify.com/s/files/1/2303/2711/files/7_324422e0-fe83-4b3d-ae5c-641f4567b5ff.jpg?v=1617058709",
     "price": 400,
     "description": "Description for product 1"
   },
   {
     "id": 4,
     "name": "Product 4",
-    "image": "/images/product.png",
+    "image": "https://cdn.fstoppers.com/styles/large-16-9/s3/lead/2022/07/essential-props-fstoppers-helenarosephotography-080-edit1.jpg",
     "price": 500,
     "description": "Description for product 1"
   },
   {
     "id": 5,
     "name": "Product 5",
-    "image": "/images/product.png",
+    "image": "https://cdn.fstoppers.com/styles/full/s3/media/2022/07/19/essential-props-helenarosephotography-123-edit-1.jpg",
     "price": 700,
     "description": "Description for product 1"
   },
   {
     "id": 6,
     "name": "Product 6",
-    "image": "/images/product.png",
+    "image": "https://cdn.shopify.com/s/files/1/2303/2711/files/2_e822dae0-14df-4cb8-b145-ea4dc0966b34.jpg?v=1617059123",
     "price": 200,
     "description": "Description for product 1"
   }

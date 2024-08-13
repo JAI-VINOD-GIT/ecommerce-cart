@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
   const { addToCart } = useCart();
-  const handleAddToCart = (product) => {
+  const handleAddToCart = (product: any) => {
     addToCart(product);
     //product.added = true;
     toast.success("Added to cart successfully");
