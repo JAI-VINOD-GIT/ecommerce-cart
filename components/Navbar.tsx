@@ -23,9 +23,9 @@ const Navbar = () => {
             )}
           </Link>
 
-          <Link href="/profile">
+          {/* <Link href="/profile">
             <FaUser className="text-2xl text-primary" />
-          </Link>
+          </Link> */}
         </div>
       </div>
     </nav>

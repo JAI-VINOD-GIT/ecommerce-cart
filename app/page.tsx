@@ -12,7 +12,7 @@ const Home = () => {
     toast.success("Added to cart successfully");
   };
   return (
-    <div className="grid grid-cols-3 gap-4 p-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
       {products.map((product) => (
         <div key={product.id} className="card w-100 bg-base-100 shadow-xl">
           <figure>
@@ -31,7 +31,7 @@ const Home = () => {
               </button> */}
               <button
                 onClick={() => handleAddToCart(product)}
-                className="btn btn-success text-white"
+                className="btn btn-success text-white w-full"
               >
                 Add to Cart
               </button>
