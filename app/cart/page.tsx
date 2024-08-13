@@ -1,6 +1,7 @@
 "use client";
 import { useCart } from "../../context/CartContext";
 import CartSummary from "../../components/CartSummary";
+import { FaRupeeSign } from "react-icons/fa";
 
 const Cart = () => {
   const { cart, updateCart } = useCart();
@@ -20,7 +21,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
+    <div className="p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 mt-20 pt-7">
       <h1 className="text-2xl mb-4">Your Cart</h1>
       <ul>
         {cart.map((item) => (
@@ -29,7 +30,10 @@ const Cart = () => {
               <img src={item.image} alt={item.name} className="w-16 h-16" />
               <div>
                 <h2>{item.name}</h2>
-                <p>Rs.{item.price.toFixed(2)}</p>
+                <p>
+                  <FaRupeeSign className="inline" />
+                  {item.price.toFixed(2)}
+                </p>
               </div>
               <div className="flex items-center">
                 <button
