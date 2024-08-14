@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { GiConfirmed } from "react-icons/gi";
 
+
 const Loading = () => {
   return <div className="loading w-36">Loading...</div>;
 };
@@ -19,6 +20,7 @@ const PaymentSuccessAnimation = () => {
 };
 
 function Checkout() {
+
   const [isLoading, setIsLoading] = useState(true);
   const [isPaymentSuccess, setIsPaymentSuccess] = useState(false);
 

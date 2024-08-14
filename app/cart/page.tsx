@@ -22,7 +22,7 @@ const Cart = () => {
 
   return (
     <div className="p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 mt-20 pt-7">
-      <h1 className="text-2xl mb-4">Your Cart</h1>
+      <h1 className="text-3xl mb-4 font-bold">Your Cart</h1>
       <ul>
         {cart.map((item) => (
           <li key={item.id} className="border-b py-4">
