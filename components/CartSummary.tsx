@@ -6,12 +6,23 @@ import Link from "next/link";
 
 const CartSummary = () => {
   const { cart } = useCart();
+  const [enteredCoupon, setEnteredCoupon] = useState("");
   const [selectedCoupon, setSelectedCoupon] = useState<{
     name: string;
     discount: number;
   } | null>(null);
   const handleCouponSelect = (coupon: any) => {
     setSelectedCoupon(coupon);
+  };
+  const handleCouponValidation = () => {
+    const matchedCoupon = coupons.find(
+      (coupon) => coupon.name === enteredCoupon
+    );
+    if (matchedCoupon) {
+      handleCouponSelect(matchedCoupon);
+    } else {
+      alert("Invalid Coupon");
+    }
   };
   const coupons = [
     { name: "Coupon1", discount: 10 },
@@ -24,44 +35,53 @@ const CartSummary = () => {
   );
   const discount = selectedCoupon ? selectedCoupon.discount : 0;
   const total = subtotal - discount;
+
   return (
     <div>
-      <div className="mt-4 text-right bottom-0 left-0 w-full flex flex-row ">
-        <div className="mt-4 text-left bottom-0 left-0 w-full sm:w-1/2 ">
-          <select
-            className="select select-accent w-100 max-w-xs text-black text-1xl "
-            onChange={(e) => handleCouponSelect(JSON.parse(e.target.value))}
-          >
-            <option disabled selected value="">
-              Select a Coupon
-            </option>
-            {coupons.map((coupon) => (
-              <option key={coupon.name} value={JSON.stringify(coupon)}>
-                {coupon.name}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="mt-4 text-right bottom-0 left-0 w-full sm:w-1/2">
-          <p>
-            Subtotal:
-            <FaRupeeSign className="inline" />
-            {subtotal.toFixed(2)}
-          </p>
+      <div className="w-3/5 flex float-right justify-end mt-7 ">
+        <table className="w-full py-10  p-4 ">
+          <tbody>
+            <tr className="border-b-2 border-white mb-5">
+              <td className="float-right mr-7 ">Subtotal :</td>
+              <td>
+                <FaRupeeSign className="inline" />
+                {subtotal.toFixed(2)}
+              </td>
+            </tr>
 
-          <p>
-            Discount: <FaRupeeSign className="inline" />
-            {discount.toFixed(2)}
-          </p>
-          <p className="font-extrabold">
-            Total: <FaRupeeSign className="inline" />
-            {total.toFixed(2)}
-          </p>
-        </div>
+            <tr className="border-b-2 border-white">
+              <td className="float-right mr-2 ">
+                <label className="input text-black input-bordered flex items-center gap-1 m-6">
+                  <input
+                    type="text"
+                    className="grow join-vertical "
+                    placeholder="Enter your COUPON"
+                    //onBlur={handleCouponValidation}
+                    onChange={(e) => setEnteredCoupon(e.target.value)}
+                  />
+                  <span className="badge badge-info bg-primary">Optional</span>
+                </label>{" "}
+              </td>
+
+              <td>
+                <FaRupeeSign className="inline" />
+                {discount.toFixed(2)}
+              </td>
+            </tr>
+
+            <tr>
+              <td className="float-right mr-7 font-bold">Total :</td>
+              <td className="font-bold">
+                <FaRupeeSign className="inline" />
+                {total.toFixed(2)}
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <Link href="/info" className="relative">
         {" "}
-        <button className="btn btn-primary w-full mt-4 sm:mt-6 md:mt-8 lg:mt-10 xl:mt-12">
+        <button className="btn btn-primary text-white w-full mt-4 sm:mt-6 md:mt-8 lg:mt-10 xl:mt-12">
           Checkout
         </button>
       </Link>
